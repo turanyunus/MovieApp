@@ -237,9 +237,9 @@ const SignInPage = ({navigation}) => {
           </TouchableOpacity>
         </View>
 
-        {/* Şifre Tekrar Kısmı */}
+        {/* Kayıt Ol Buton Kısmı */}
         <TouchableOpacity style={styles.signInButton}>
-          <Text style={styles.signInButtonText}>Sign Up</Text>
+          <Text style={styles.signInButtonText}>Kayıt Ol</Text>
         </TouchableOpacity>
       </Animatable.View>
     </View>
