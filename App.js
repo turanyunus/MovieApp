@@ -4,6 +4,7 @@ import HomePage from './src/screens/HomePage';
 import {NavigationContainer} from '@react-navigation/native';
 import DrawerContent from './src/components/drawer-content';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import EntryPage from "./src/screens/EntryPage";
 
 const Drawer = createDrawerNavigator();
 
@@ -19,6 +20,7 @@ const DrawNavigator = () => {
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isLogin, isSetLogin] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,7 +35,7 @@ const App = () => {
   return (
     <>
       <NavigationContainer>
-        <DrawNavigator />
+        {isLogin ? <DrawNavigator /> : <EntryPage />}
       </NavigationContainer>
     </>
   );
