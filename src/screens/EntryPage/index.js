@@ -22,8 +22,9 @@ const EntryPage = (props) => {
             onPress={() => props.navigation.navigate('SignInPage')}>
             <Text style={styles.buttonText}>Kayıt Ol</Text>
           </Button>
-          <Button style={styles.button}
-                  onPress={() => props.navigation.navigate('LogInPage')}>
+          <Button
+            style={styles.button}
+            onPress={() => props.navigation.navigate('LogInPage')}>
             <Text style={styles.buttonText}>Giriş Yap</Text>
           </Button>
         </View>

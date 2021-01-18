@@ -102,7 +102,7 @@ function CardComponent({value, navigation, routeName}) {
               <Text style={styles.overview}>Yayın : </Text> {value.release_date}
             </Text>
             <Text numberOfLines={1} style={styles.detailDate}>
-                <Text style={styles.overview}>Oylar : </Text>  {value.vote_count}
+              <Text style={styles.overview}>Oylar : </Text> {value.vote_count}
             </Text>
           </View>
         </Body>
