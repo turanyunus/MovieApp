@@ -52,7 +52,7 @@ const AuthStack = () => (
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [isLogin, isSetLogin] = useState(false);
+  const [isLogin, isSetLogin] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
