@@ -5,7 +5,7 @@ import HeaderComponent from '../../components/header';
 const HomePage = ({navigation}) => {
   return (
     <View>
-      <HeaderComponent handleNavigate={navigation} />
+      <HeaderComponent handleNavigate={navigation} backButton={false} />
       <Text>Home.js</Text>
     </View>
   );

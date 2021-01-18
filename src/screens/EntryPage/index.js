@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Image, Dimensions, StatusBar} from 'react-native';
 import {Button, Text} from 'native-base';
 
-const EntryPage = () => {
+const EntryPage = (props) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#151515" barStyle="light-content" />
@@ -17,10 +17,13 @@ const EntryPage = () => {
       </View>
       <View style={styles.centerSide}>
         <View style={styles.centerButtonSide}>
-          <Button style={styles.button}>
+          <Button
+            style={styles.button}
+            onPress={() => props.navigation.navigate('SignInPage')}>
             <Text style={styles.buttonText}>Kayıt Ol</Text>
           </Button>
-          <Button style={styles.button}>
+          <Button style={styles.button}
+                  onPress={() => props.navigation.navigate('LogInPage')}>
             <Text style={styles.buttonText}>Giriş Yap</Text>
           </Button>
         </View>

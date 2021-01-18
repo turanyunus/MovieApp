@@ -7,17 +7,26 @@ function HeaderComponent(props) {
     <Header style={styles.container}>
       <StatusBar barStyle="light-content" />
       <Left style={{paddingLeft: 10}}>
-        <Button transparent onPress={() => props.handleNavigate.openDrawer()}>
-          <Image
-            source={require('../assets/img/menu.png')}
-            style={{height: 24, width: 24}}
-          />
-        </Button>
+        {props.backButton ? (
+          <Button transparent onPress={() => props.handleNavigate.goBack()}>
+            <Image
+              source={require('../assets/img/back-button.png')}
+              style={{height: 24, width: 24}}
+            />
+          </Button>
+        ) : (
+          <Button transparent onPress={() => props.handleNavigate.openDrawer()}>
+            <Image
+              source={require('../assets/img/menu.png')}
+              style={{height: 24, width: 24}}
+            />
+          </Button>
+        )}
       </Left>
       <Body>
         <Title style={styles.title}>Movie App</Title>
       </Body>
-      <Right></Right>
+      <Right />
     </Header>
   );
 }
