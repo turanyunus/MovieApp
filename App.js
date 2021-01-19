@@ -15,6 +15,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import DetailPage from "./src/screens/HomePage/DetailPage";
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -74,6 +75,11 @@ const screenHomeStack = () => (
       options={navigationHandler}
       component={HomePage}
     />
+      <Stack.Screen
+          name="DetailPage"
+          options={navigationHandler}
+          component={DetailPage}
+      />
   </Stack.Navigator>
 );
 

@@ -8,6 +8,13 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 function CardComponent({value, navigation, routeName}) {
+
+  function onPressListItem(routeName, itemId) {
+    navigation.navigate(routeName, {
+      itemId: itemId
+    })
+  }
+
   const renderAverageButtonItem = (averagePoint) => {
     if (averagePoint >= 0 && averagePoint < 7)
       return (
@@ -83,7 +90,8 @@ function CardComponent({value, navigation, routeName}) {
 
   return (
     <View style={{flex: 1}}>
-      <ListItem style={styles.containerList}>
+      <ListItem style={styles.containerList}
+                onPress={() => onPressListItem(routeName, value.id)}>
         <Left>
           <Image
             source={{uri: `${IMAGE_URL}original/${value.backdrop_path}`}}

@@ -34,7 +34,7 @@ const HomePage = ({navigation}) => {
         key={item.id}
         value={item}
         navigation={navigation}
-        routeName={'HomeDetailScreen'}
+        routeName={'DetailPage'}
       />
     );
   };
