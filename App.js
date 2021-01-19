@@ -16,6 +16,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import DetailPage from './src/screens/HomePage/DetailPage';
+import SearchMoviePage from "./src/screens/SearchMoviePage";
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -47,6 +48,9 @@ const BottomTabNavigator = () => {
           } else if (route.name === 'NewMoviesPage') {
             iconName = focused ? 'md-disc-sharp' : 'md-disc-outline';
           }
+          else if (route.name === 'SearchMoviePage') {
+              iconName = focused ? 'search' : 'search-outline';
+          }
           return (
             <Icon name={iconName} style={{color: '#fa5656', fontSize: 23}} />
           );
@@ -62,6 +66,11 @@ const BottomTabNavigator = () => {
         name="NewMoviesPage"
         options={{title: 'En Yeniler'}}
         children={screenNewListStack}
+      />
+      <MaterialBottomTabs.Screen
+        name="SearchMoviePage"
+        options={{title: 'Film Ara'}}
+        component={SearchMoviePage}
       />
     </MaterialBottomTabs.Navigator>
   );
