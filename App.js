@@ -15,7 +15,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import DetailPage from "./src/screens/HomePage/DetailPage";
+import DetailPage from './src/screens/HomePage/DetailPage';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -44,8 +44,7 @@ const BottomTabNavigator = () => {
           let iconName;
           if (route.name === 'HomePage') {
             iconName = focused ? 'ios-home' : 'home-outline';
-          }
-          else if (route.name === 'NewMoviesPage') {
+          } else if (route.name === 'NewMoviesPage') {
             iconName = focused ? 'md-disc-sharp' : 'md-disc-outline';
           }
           return (
@@ -62,7 +61,7 @@ const BottomTabNavigator = () => {
       <MaterialBottomTabs.Screen
         name="NewMoviesPage"
         options={{title: 'En Yeniler'}}
-        children={NewMoviesPage}
+        children={screenNewListStack}
       />
     </MaterialBottomTabs.Navigator>
   );
@@ -75,11 +74,21 @@ const screenHomeStack = () => (
       options={navigationHandler}
       component={HomePage}
     />
-      <Stack.Screen
-          name="DetailPage"
-          options={navigationHandler}
-          component={DetailPage}
-      />
+    <Stack.Screen
+      name="DetailPage"
+      options={navigationHandler}
+      component={DetailPage}
+    />
+  </Stack.Navigator>
+);
+
+const screenNewListStack = () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="NewMoviesPage"
+      options={navigationHandler}
+      component={NewMoviesPage}
+    />
   </Stack.Navigator>
 );
 
