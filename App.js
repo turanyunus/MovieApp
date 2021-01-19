@@ -43,7 +43,8 @@ const BottomTabNavigator = () => {
           let iconName;
           if (route.name === 'HomePage') {
             iconName = focused ? 'ios-home' : 'home-outline';
-          } else if (route.name === 'NewMoviesPage') {
+          }
+          else if (route.name === 'NewMoviesPage') {
             iconName = focused ? 'md-disc-sharp' : 'md-disc-outline';
           }
           return (

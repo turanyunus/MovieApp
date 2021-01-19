@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, FlatList} from 'react-native';
+import {View, FlatList, ActivityIndicator} from 'react-native';
 import HeaderComponent from '../../components/header';
 import movie from '../../api/resources/movie';
 import CardComponent from '../../components/card-component';
@@ -7,16 +7,21 @@ import CardComponent from '../../components/card-component';
 const HomePage = ({navigation}) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const [onScrollEndSpinner, setOnScrollEndSpinner] = useState(false);
 
   useEffect(() => {
-    getMovies().then();
+    setData([]);
   }, []);
+
+  useEffect(() => {
+    setOnScrollEndSpinner(true);
+    getMovies().then();
+  }, [page]);
 
   const getMovies = async () => {
     try {
       let response = await movie.popular(page);
-      setData(response.data);
-      console.log(response.data.results);
+      setData(data.concat(response.data.results));
     } catch (e) {
       console.log(e);
     }
@@ -33,16 +38,38 @@ const HomePage = ({navigation}) => {
     );
   };
 
+  const renderFooter = () => {
+    return (
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          marginBottom: 10,
+          justifyContent: 'center',
+          marginTop: 10,
+        }}>
+        {onScrollEndSpinner ? (
+          <ActivityIndicator color="#ff3d3d" style={{marginLeft: 8}} />
+        ) : null}
+      </View>
+    );
+  };
+
+  const handleGetDate = async () => {
+    setOnScrollEndSpinner(true);
+    setPage(page + 1);
+  };
+
   return (
     <View style={{flex: 1}}>
       <HeaderComponent handleNavigate={navigation} backButton={false} />
       <FlatList
-        data={data.results}
+        data={data}
         keyExtractor={(item, index) => index.toString()}
         renderItem={ItemView}
         enableEmptySections={true}
-        //ListFooterComponent={renderFooter}
-        //onEndReached={handleGetDate}
+        ListFooterComponent={renderFooter}
+        onEndReached={handleGetDate}
         onEndReachedThreshold={0.5}
       />
     </View>
