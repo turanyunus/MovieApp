@@ -3,6 +3,7 @@ import {View, FlatList, ActivityIndicator} from 'react-native';
 import HeaderComponent from '../../components/header';
 import movie from '../../api/resources/movie';
 import CardComponent from '../../components/card-component';
+import {colors} from "../../utils/theme";
 
 const HomePage = ({navigation}) => {
   const [data, setData] = useState([]);
@@ -49,7 +50,7 @@ const HomePage = ({navigation}) => {
           marginTop: 10,
         }}>
         {onScrollEndSpinner ? (
-          <ActivityIndicator color="#ff3d3d" style={{marginLeft: 8}} />
+          <ActivityIndicator color={colors.RED.primary} style={{marginLeft: 8}} />
         ) : null}
       </View>
     );

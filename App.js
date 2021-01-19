@@ -55,7 +55,7 @@ const BottomTabNavigator = () => {
       barStyle={{backgroundColor: 'white'}}>
       <MaterialBottomTabs.Screen
         name="HomePage"
-        options={{title: 'Anasayfa'}}
+        options={{title: 'En Popüler'}}
         children={screenHomeStack}
       />
       <MaterialBottomTabs.Screen

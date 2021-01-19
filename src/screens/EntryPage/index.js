@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Image, Dimensions, StatusBar} from 'react-native';
 import {Button, Text} from 'native-base';
+import {colors} from "../../utils/theme";
 
 const EntryPage = (props) => {
   return (
@@ -40,7 +41,7 @@ const {height} = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ff3d3d',
+    backgroundColor: colors.RED.primary,
     padding: 20,
     display: 'flex',
   },

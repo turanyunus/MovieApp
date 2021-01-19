@@ -1,6 +1,7 @@
 import React from 'react';
 import {Header, Left, Body, Button, Title, Right} from 'native-base';
 import {Image, StatusBar, StyleSheet} from 'react-native';
+import {colors} from "../utils/theme";
 
 function HeaderComponent(props) {
   return (
@@ -33,7 +34,7 @@ function HeaderComponent(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#ff3d3d',
+    backgroundColor: colors.RED.primary,
     marginBottom: 2,
     borderBottomWidth: 1,
     borderBottomColor: '#FFF',

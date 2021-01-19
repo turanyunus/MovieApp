@@ -10,6 +10,7 @@ import {
 import HeaderComponent from '../../components/header';
 import * as Animatable from 'react-native-animatable';
 import {ValidateEmail} from '../../utils/validate-email';
+import {colors} from "../../utils/theme";
 
 const SignInPage = ({navigation}) => {
   const [data, setData] = useState({
@@ -249,7 +250,7 @@ const SignInPage = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ff3d3d',
+    backgroundColor: colors.RED.primary,
   },
   header: {
     flex: 1,
@@ -299,7 +300,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    backgroundColor: '#ff3d3d',
+    backgroundColor: colors.RED.primary,
   },
   signInButtonText: {
     color: 'white',

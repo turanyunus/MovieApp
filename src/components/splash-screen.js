@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {Text} from 'react-native-animatable';
+import {colors} from "../utils/theme";
 
 const SplashScreen = () => {
   return (
@@ -35,7 +36,7 @@ const logo = height * 0.24;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ff3d3d',
+    backgroundColor: colors.RED.primary,
   },
   header: {
     flex: 2,
