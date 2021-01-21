@@ -63,7 +63,7 @@ const HomePage = ({navigation}) => {
 
   return (
     <View style={{flex: 1}}>
-      <HeaderComponent handleNavigate={navigation} backButton={false} />
+      <HeaderComponent handleNavigate={navigation} backButton={false} filterButton={true} />
       <FlatList
         data={data}
         keyExtractor={(item, index) => index.toString()}
