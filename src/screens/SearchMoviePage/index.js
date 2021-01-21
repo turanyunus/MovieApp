@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Dimensions, Image, StyleSheet, View} from 'react-native';
 import HeaderComponent from '../../components/header';
 import {Item, Input, Icon, Button, Text, Spinner} from 'native-base';
 import {colors} from '../../utils/theme';
 import * as Animatable from 'react-native-animatable';
+import CardComponent from "../../components/card-component";
 
 const SearchMoviePage = ({navigation}) => {
   const [searchText, onSearchText] = useState('');
@@ -60,11 +61,23 @@ const SearchMoviePage = ({navigation}) => {
         )}
       </View>
       <View style={styles.resultSide}>
-        <Text style={styles.resultText}>Aranan Kelimeler : Gençlik, PK, Aamir Khan </Text>
+        <Text style={styles.resultText}>
+          Aranan Kelimeler : Gençlik, PK, Aamir Khan{' '}
+        </Text>
+      </View>
+
+      <View style={styles.imgContainer}>
+        <Image
+          source={require('../../assets/img/splash-logo.png')}
+          style={styles.postImageStyle}
+        />
       </View>
     </View>
   );
 };
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
@@ -103,6 +116,19 @@ const styles = StyleSheet.create({
   },
   resultText: {
     color: '#868686',
+  },
+  imgContainer: {
+    marginTop: 40,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  postImageStyle: {
+    backgroundColor: colors.RED.primary,
+    height: windowHeight / 4,
+    width: windowWidth / 1.8,
+    borderRadius: windowHeight / 5.5,
+    opacity: 0.5,
   },
 });
 
